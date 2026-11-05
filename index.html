@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>App Statistics</title>
+<meta name="description" content="App Statistics: App Store, Google Play, Apple Ads und Kosten in einem Dashboard. Deine Schlüssel bleiben auf deinem Gerät.">
+<link rel="icon" href="icon.png">
+<style>
+  :root { --bg: #f6f5f1; --card: #fff; --ink: #1c1c1e; --muted: #6b6b70; --line: #e6e4dd; --accent: #2f6fe4; --good: #1f8a4c; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #111214; --card: #1b1c1f; --ink: #f2f2f4; --muted: #a0a0a8; --line: #2c2d31; --accent: #6ea0ff; --good: #5cc98a; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 32px 16px 64px; }
+  header { display: flex; align-items: center; gap: 14px; }
+  header img { width: 52px; height: 52px; border-radius: 12px; }
+  header b { font-size: 19px; }
+  .lang { margin-left: auto; font-size: 14px; }
+  .lang a { color: var(--accent); text-decoration: none; margin-left: 10px; }
+  .hero { padding: 48px 0 24px; }
+  .hero h1 { font-size: clamp(30px, 6vw, 46px); line-height: 1.1; letter-spacing: -0.03em; margin: 0 0 14px; }
+  .hero p { font-size: 19px; color: var(--muted); margin: 0; max-width: 620px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 14px; margin: 28px 0; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; }
+  .card h3 { margin: 0 0 6px; font-size: 17px; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  h2 { font-size: 24px; letter-spacing: -0.01em; margin: 44px 0 10px; }
+  details { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 18px; margin: 10px 0; }
+  summary { cursor: pointer; font-weight: 600; }
+  details p { color: var(--muted); margin: 8px 0 4px; }
+  .button { display: inline-block; background: var(--ink); color: var(--bg); padding: 11px 18px; border-radius: 12px; text-decoration: none; font-weight: 600; margin-top: 18px; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 14px; }
+  footer a, a { color: var(--accent); }
+  [data-l="en"] { display: none; }
+  html[lang="en"] [data-l="de"] { display: none; }
+  html[lang="en"] [data-l="en"] { display: block; }
+</style>
+</head>
+<body>
+<main>
+  <header><img src="icon.png" alt=""><b>App Statistics</b>
+    <span class="lang"><a href="?lang=de">Deutsch</a><a href="?lang=en">English</a></span></header>
+
+  <div data-l="de">
+    <section class="hero">
+      <h1>Lohnt sich deine App?</h1>
+      <p>App Store, Google Play, Apple Ads und deine Kosten in einem Dashboard. Klar erklärt, auf iPhone, iPad und Mac – und deine Schlüssel bleiben auf deinem Gerät.</p>
+    </section>
+    <div class="grid">
+      <div class="card"><h3>Alles an einem Ort</h3><p>Erlös, Downloads und Käufe aus App Store und Google Play. iOS- und Android-Version einer App werden zusammengezählt.</p></div>
+      <div class="card"><h3>Werbung im Blick</h3><p>Apple-Ads-Ausgaben neben dem Wert eines Downloads: Siehst du sofort, ob sich die Werbung lohnt.</p></div>
+      <div class="card"><h3>Gewinnschwelle</h3><p>Erfasse Kosten wie das Developer Program und sieh, wann deine App im Plus ist.</p></div>
+      <div class="card"><h3>Privat</h3><p>Kein Konto, kein Server, kein Tracking. Die App holt die Berichte direkt bei Apple und Google.</p></div>
+    </div>
+
+    <h2 id="support">Hilfe</h2>
+    <details><summary>Was brauche ich, um meine Zahlen zu sehen?</summary>
+      <p>Einen App-Store-Connect-API-Schlüssel mit Zugriff „Finanzen“ (für Verkäufe und Downloads). Optional: Zugang zu Apple Ads und ein Google-Dienstkonto für Google Play. Die App führt dich Schritt für Schritt durch die Einrichtung.</p></details>
+    <details><summary>Kann ich es ausprobieren, ohne etwas zu verbinden?</summary>
+      <p>Ja: Einstellungen → „Mit Beispieldaten ausprobieren“ zeigt alle Funktionen mit erfundenen Zahlen.</p></details>
+    <details><summary>Warum sind die Zahlen von gestern?</summary>
+      <p>Apple und Google veröffentlichen Verkaufsberichte einmal am Tag, meist am Folgetag. Apple-Ads-Ausgaben sind fast in Echtzeit.</p></details>
+    <details><summary>Was bringt App Statistics Pro?</summary>
+      <p>Gratis zeigt die App eine App aus App Store Connect. Pro (Einmalkauf) schaltet beliebig viele Apps, Google Play, Apple Ads und Mitteilungen bei neuen Käufen frei. Ein früherer Kauf lässt sich in den Einstellungen wiederherstellen.</p></details>
+    <details><summary>Wie übertrage ich die Einrichtung auf ein anderes Gerät?</summary>
+      <p>Einstellungen → „Einrichtung herunterladen“ speichert eine Datei mit deinen Verbindungen. Öffne sie auf dem anderen Gerät mit App Statistics, z. B. per AirDrop. Die Datei enthält deine Schlüssel – bewahre sie sicher auf.</p></details>
+    <details><summary>Meine Frage ist nicht dabei</summary>
+      <p>Schreib uns: <a href="mailto:klopfer.heiterkeit-5j@icloud.com?subject=App%20Statistics">E-Mail an den Support</a>. Wir antworten in der Regel innert ein bis zwei Tagen.</p></details>
+  </div>
+
+  <div data-l="en">
+    <section class="hero">
+      <h1>Is your app paying off?</h1>
+      <p>App Store, Google Play, Apple Ads and your costs in one dashboard. Clearly explained, on iPhone, iPad and Mac – and your keys stay on your device.</p>
+    </section>
+    <div class="grid">
+      <div class="card"><h3>Everything in one place</h3><p>Proceeds, downloads and purchases from the App Store and Google Play. The iOS and Android version of an app are added up.</p></div>
+      <div class="card"><h3>Ads at a glance</h3><p>Apple Ads spend next to what a download is worth: see right away whether your ads pay off.</p></div>
+      <div class="card"><h3>Break-even</h3><p>Add costs like the Developer Program and see when your app is in the black.</p></div>
+      <div class="card"><h3>Private</h3><p>No account, no server, no tracking. The app fetches the reports directly from Apple and Google.</p></div>
+    </div>
+
+    <h2 id="support-en">Help</h2>
+    <details><summary>What do I need to see my figures?</summary>
+      <p>An App Store Connect API key with “Finance” access (for sales and downloads). Optional: access to Apple Ads and a Google service account for Google Play. The app guides you step by step.</p></details>
+    <details><summary>Can I try it without connecting anything?</summary>
+      <p>Yes: Settings → “Try with sample data” shows every feature with made-up figures.</p></details>
+    <details><summary>Why are the figures from yesterday?</summary>
+      <p>Apple and Google publish sales reports once a day, usually the next day. Apple Ads spend is almost real-time.</p></details>
+    <details><summary>What does App Statistics Pro add?</summary>
+      <p>For free the app shows one App Store Connect app. Pro (one-time purchase) unlocks any number of apps, Google Play, Apple Ads and notifications for new purchases. An earlier purchase can be restored in Settings.</p></details>
+    <details><summary>How do I move my setup to another device?</summary>
+      <p>Settings → “Download setup” saves a file with your connections. Open it with App Statistics on the other device, e.g. via AirDrop. The file contains your keys – keep it safe.</p></details>
+    <details><summary>My question is not here</summary>
+      <p>Write to us: <a href="mailto:klopfer.heiterkeit-5j@icloud.com?subject=App%20Statistics">email support</a>. We usually answer within one or two days.</p></details>
+  </div>
+
+  <footer>
+    <span data-l="de"><a href="privacy.html">Datenschutz</a> · © 2026 Pere Dalic, Schweiz</span>
+    <span data-l="en"><a href="privacy.html?lang=en">Privacy Policy</a> · © 2026 Pere Dalic, Switzerland</span>
+  </footer>
+</main>
+<script>
+  const q = new URLSearchParams(location.search).get("lang");
+  const lang = q || ((navigator.language || "de").toLowerCase().startsWith("de") ? "de" : "en");
+  document.documentElement.lang = lang === "de" ? "de" : "en";
+</script>
+</body>
+</html>
